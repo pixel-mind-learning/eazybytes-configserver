@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: "configserver"
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        #        native:
+        #        search-locations: "classpath:/config"
+        #        search-locations: "file:///C://Users//User//Documents//config"
+        git:
+          uri: "https://github.com/pixel-mind-learning/eazybytes-config.git"
+          default-label: main
+          clone-on-start: true
+          force-pull: true
+          timeout: 3
+server:
+  port: 8071
